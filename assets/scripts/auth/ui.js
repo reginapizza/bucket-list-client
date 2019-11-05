@@ -40,8 +40,7 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   $('#message-center').text('Signed out successfully!').fadeIn(0, 1)
   $('#message-center').text('Signed out successfully!').fadeOut(5000, 0)
-  $('.resource-view').css('display', 'none')
-  $('.sign-up, .sign-in, .background-info').show()
+  $('.bucket-list').css('display', 'none')
   $('.sign-out, .change-password, .get-my-items, .get-all-items, .show-item, .update-item, .delete-item, .create-item').hide()
   $('#signUpForm, #signInForm, #changePasswordForm, #item-info, #deleteitemForm, #updateitemForm, #showitemForm').trigger('reset')
 }
