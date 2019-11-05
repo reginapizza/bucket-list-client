@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Bucket List</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,161 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+
+    <body data-spy="scroll">
+      <div class="container">
+        <div class="row title">
+          <h1 class="col-12">Bucket List</h1>
+        </div>
+        <div class="row">
+          <div class="side-bar col-12 col-lg-3 panel">
+
+      <!--SIGN UP-->
+ <div class="sign-up">
+ <!-- Sign up Modal Button -->
+  <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signUp">
+              Sign Up
+  </button>
+   <!-- Modal -->
+   <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+   <div class="modal-content">
+   <div class="modal-header">
+  <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  <div class="modal-body">
+  <form id="signUpForm">
+  <input type="email" name="credentials[email]" placeholder="Enter Email">
+  <input type="password" name="credentials[password]"
+  placeholder="Enter Password">
+  <input type="password" name="credentials[password_confirmation]"
+  placeholder="Enter Password Again"></br>
+  <button class="btn">Sign Up!</button>
+       </form>
+   <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+  </div>
+  </div>
+  </div>
+  </div> <!--ends sign up modal-->
+  </div> <!--ends sign up-->
+
+  <!--SIGN IN-->
+  <div class="sign-in">
+ <!-- Sign In Modal Button -->
+  <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signIn">
+                  Sign In
+  </button>
+  <!-- Modal -->
+   <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="signInLabel">Sign In</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+    <form id="signInForm">
+    <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+    <input class="sign-in-start" type="password" name="credentials[password]"
+     placeholder="Enter Password">
+    <button class="btn">Sign In!</button>
+    </form>
+    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+    </div>
+    </div>
+    </div>
+    </div> <!--ends sign in modal-->
+    </div> <!--ends sign in-->
+
+
+  <!--CHANGE PASSWORD-->
+  <div class="change-password">
+  <!-- Sign in Modal Button -->
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#changePassword">                Change Password
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="changePasswordLabel">Sign In</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body">
+     <form id="changePasswordForm">
+    <input type="password" name="passwords[old]"
+    placeholder="Enter Old Password">
+   <input type="password" name="passwords[new]"
+   placeholder="Enter New Password">
+    <button class="btn" type="submit">Change Password!</button>
+    </form>
+   <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+    </div>
+  </div>
+  </div>
+  </div> <!--ends change password modal-->
+  </div> <!--ends change password-->
+  <!--sign out-->
+    <div>
+<form class="sign-out">
+<button class="btn btn-block">Sign Out!</button>
+</form>
+</div>
+
+<div class="create-item">
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#createItem">
+                Click here to create an item!
+              </button>
+      <!-- Modal -->
+    <div class="modal fade" id="createItem" tabindex="-1" role="dialog" aria-labelledby="createItemTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+  <h5 class="modal-title" id="createItemTitle">My Item</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>  </button>
+</div>
+<div class="modal-body">
+  <div>
+     <h6><span>* = Required Field</span></h6>
+</div>
+  <h4 class="form-title"> Item Setting: </h4>
+  <form id="item-info">
+Title: <span class="required field">*</span> <input type="title" name="item[title_of_item]"><br/> <br>
+Location: <span class="required field">*</span> <input type="text" name="item[location]" placeholder="Ex: Boston"> <br/> </br>
+Description: <span class="required field">*</span> <textarea name="textarea"
+   rows="10" cols="50">Write something here</textarea> </br>
+Cost Estimate:<span class="required field">*</span> <input type="cost" name="item[cost_of_item]"><br/> </br>
+Scale on Importance:<span class="required field">*</span><p class="page-header"> Choose the scale of importance from 1 (bad) to 5 (good)! </p>
+      <div class="chart-scale">
+        <button class="btn btn-scale btn-scale-asc-1">1</button>
+        <button class="btn btn-scale btn-scale-asc-2">2</button>
+        <button class="btn btn-scale btn-scale-asc-3">3</button>
+        <button class="btn btn-scale btn-scale-asc-4">4</button>
+        <button class="btn btn-scale btn-scale-asc-5">5</button>
+      </div>
+    </br>
+Scale on Difficulty:<span class="required field">*</span><p class="page-header"> Choose the scale of difficulty from 1 (bad) to 5 (good)! </p>
+  <div class="chart-scale">
+  <button class="btn btn-scale btn-scale-asc-6">1</button>
+  <button class="btn btn-scale btn-scale-asc-7">2</button>
+  <button class="btn btn-scale btn-scale-asc-8">3</button>
+  <button class="btn btn-scale btn-scale-asc-9">4</button>
+  <button class="btn btn-scale btn-scale-asc-10">5</button>
+<br/>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
 </html>
