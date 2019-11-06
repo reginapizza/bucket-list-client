@@ -1,6 +1,5 @@
 'use strict'
-const getItemsHandlebars = require('../templates/getItems.handlebars')
-const showItemHandlebars = require('../templates/showItem.handlebars')
+// const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
 
 const onCreateItemSuccess = function (data) {
   $('#message-center').text('Successfully created an Item.').fadeIn(0, 1)
@@ -17,8 +16,7 @@ const onCreateItemFailure = function (data) {
 }
 
 const onGetMyItemsSuccess = function (data) {
-  $('.bucket-list').empty()
-  $('.bucket-list').css('display', 'block').append(getItemsHandlebars({items: data.items}))
+  // $('.bucket-list').empty()
   $('#message-center').text('Successfully got your Items').fadeIn(0, 1)
   $('#message-center').text('Successfully got your Items').fadeOut(5000, 0)
 }
@@ -45,7 +43,6 @@ const onShowItemSuccess = function (data) {
   $('.bucket-list').empty()
   $('#message-center').text('Successfully got an Item').fadeIn(0, 1)
   $('#message-center').text('Successfully got an Item').fadeOut(5000, 0)
-  $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
 
 const onShowItemFailure = function (data) {
@@ -60,7 +57,6 @@ const onUpdateItemSuccess = function (data) {
   $('#message-center').text('Successfully updated Item').fadeOut(5000, 0)
   $('#updateItem').modal('hide')
   $('#updateItemForm').trigger('reset')
-  $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
 
 const onUpdateItemFailure = function (data) {
