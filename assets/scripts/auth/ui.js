@@ -2,6 +2,7 @@
 // const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
 
 const store = require('../store')
+// const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
 
 const onSignUpFailure = function () {
   $('#message-center').text('Sign Up Failed. Please Try Again.').fadeIn(0, 1)
@@ -45,6 +46,8 @@ const onSignOutSuccess = function () {
   $('.list-view').css('display', 'none')
   $('.sign-out, .change-password, .get-my-items, .get-all-items, .show-item, .update-item, .delete-item, .create-item').hide()
   $('#signUpForm, #signInForm, #changePasswordForm, #item-info, #deleteitemForm, #updateitemForm, #showitemForm').trigger('reset')
+  $('#signIn, #signUp').modal('hide')
+  $('.sign-up, .sign-in').hide()
 }
 
 const onSignOutFailure = function () {

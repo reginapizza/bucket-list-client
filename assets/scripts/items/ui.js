@@ -43,6 +43,7 @@ const onShowItemSuccess = function (data) {
   $('.bucket-list').empty()
   $('#message-center').text('Successfully got an Item').fadeIn(0, 1)
   $('#message-center').text('Successfully got an Item').fadeOut(5000, 0)
+  // $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
 
 const onShowItemFailure = function (data) {
@@ -57,6 +58,7 @@ const onUpdateItemSuccess = function (data) {
   $('#message-center').text('Successfully updated Item').fadeOut(5000, 0)
   $('#updateItem').modal('hide')
   $('#updateItemForm').trigger('reset')
+  // $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
 
 const onUpdateItemFailure = function (data) {
