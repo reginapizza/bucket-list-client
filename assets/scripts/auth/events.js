@@ -1,6 +1,7 @@
 'use strict'
 const ui = require('./ui.js')
 const api = require('./api.js')
+const itemEvents = require('../items/events.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onSignUp = function (event) {
@@ -21,6 +22,7 @@ const onSignIn = function (event) {
   const formData = getFormFields(form)
   api.signIn(formData)
     .then(ui.onSignInSuccess)
+    .then(itemEvents.onGetMyItems)
     .catch(ui.onSignInFailure)
 }
 

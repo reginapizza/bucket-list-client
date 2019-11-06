@@ -1,5 +1,5 @@
 'use strict'
-// const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
+const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
 
 const onCreateItemSuccess = function (data) {
   $('#message-center').text('Successfully created an Item.').fadeIn(0, 1)
@@ -16,7 +16,7 @@ const onCreateItemFailure = function (data) {
 }
 
 const onGetMyItemsSuccess = function (data) {
-  // $('.bucket-list').empty()
+  $('.list-view').css('display', 'block').append(getMyItemsHandlebars({items: data.items}))
   $('#message-center').text('Successfully got your Items').fadeIn(0, 1)
   $('#message-center').text('Successfully got your Items').fadeOut(5000, 0)
 }

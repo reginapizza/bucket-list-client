@@ -29,11 +29,11 @@ const onShowItems = function (event) {
     .catch(ui.onShowItemsFailure)
 }
 
-const onGetMyItems = function (event) {
-  event.preventDefault()
-  const form = event.target
-  const formData = getFormFields(form)
-  api.getMyItems(formData)
+const onGetMyItems = function () {
+  // event.preventDefault()
+  // const form = event.target
+  // const formData = getFormFields(form)
+  api.getMyItems()
     .then(ui.onGetMyItemsSuccess)
     .catch(ui.onGetMyItemsFailure)
 }
