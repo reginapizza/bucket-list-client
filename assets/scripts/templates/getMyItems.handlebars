@@ -98,25 +98,23 @@
                 Description: <span class="required field">*</span> <textarea name="item[{{item.description}}]" rows="10" cols="50" placeholder=""> </textarea> </br>
                 Location: <input type="text" name="item[{{item.location}}]" placeholder="Ex: Boston"> </br>
                 Cost Estimate: <input type="text" name="item[cost]"> </br>
-                Importance Rating: <!--name="item[{{item.importanceScale}}]"-->
-                Rate the importance from 1 (bad) to 5 (good):
-                <div class="chart-scale">
-                  <button class="btn btn-scale btn-scale-asc-1">1</button>
-                  <button class="btn btn-scale btn-scale-asc-2">2</button>
-                  <button class="btn btn-scale btn-scale-asc-3">3</button>
-                  <button class="btn btn-scale btn-scale-asc-4">4</button>
-                  <button class="btn btn-scale btn-scale-asc-5">5</button>
-                </div>
+                Importance Rating:
+                Importance Rating: <select name="item[importanceScale]">
+                  <option value="1">1 (not very important)</option>
+                  <option value="2">2 (somewhat important)</option>
+                  <option value="3">3 (important)</option>
+                  <option value="4">4 (very important)</option>
+                  <option value="5">5 (absolutely crucial)</option>
+                </select>
                 </br>
-                Difficulty Rating: <!--name="item[{{item.difficultyScale}}]"-->
-                Rate the difficulty from 1 (bad) to 5 (good):
-                <div class="chart-scale">
-                  <button class="btn btn-scale btn-scale-asc-6">1</button>
-                  <button class="btn btn-scale btn-scale-asc-7">2</button>
-                  <button class="btn btn-scale btn-scale-asc-8">3</button>
-                  <button class="btn btn-scale btn-scale-asc-9">4</button>
-                  <button class="btn btn-scale btn-scale-asc-10">5</button>
-                </div>
+                Difficulty Rating:<select name="item[difficultyScale]">
+                  <option value="1">1 (not very important)</option>
+                  <option value="2">2 (somewhat important)</option>
+                  <option value="3">3 (important)</option>
+                  <option value="4">4 (very important)</option>
+                  <option value="5">5 (absolutely crucial)</option>
+               </select>
+               </br>
                 <button class="btn" type="submit" id="update-item-submit">Submit</button>
               </form>
             </div>

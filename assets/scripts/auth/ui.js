@@ -1,5 +1,4 @@
 'use strict'
-// const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
 
 const store = require('../store')
 // const getMyItemsHandlebars = require('../templates/getMyItems.handlebars')
@@ -14,7 +13,6 @@ const onSignInSuccess = function (responseData) {
   $('#message-center').text('Signed In Successfully!').fadeIn(0, 1)
   $('#message-center').text('Signed In Successfully!').fadeOut(5000, 0)
   store.user = responseData.user
-  // $('.list-view').css('display', 'block').append(getMyItemsHandlebars)({items: data.items})
   $('#signIn, #signUp').modal('hide')
   $('.sign-up, .sign-in').hide()
   $('.sign-out, .change-password, .get-my-items, .get-all-items, .show-item, .update-item, .delete-item, .create-item').css('display', 'block')
