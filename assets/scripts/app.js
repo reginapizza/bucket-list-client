@@ -31,7 +31,7 @@ $(() => {
   // this will update an item (only can be done by owner)
   $('.update-item').on('submit', itemEvents.onUpdateItem)
   // this will delete the item (only can be done by owner)
-  $('.delete-item').on('click', itemEvents.onDeleteItem)
+  $('#deleteItem').on('submit', itemEvents.onDeleteItem)
 })
 
 module.exports = {
