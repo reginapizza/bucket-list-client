@@ -5,14 +5,16 @@ const onCreateItemSuccess = function (data) {
   $('#message-center').text('Successfully created an Item.').fadeIn(0, 1)
   $('#message-center').text('Successfully created an Item.').fadeOut(5000, 0)
   $('#createItem').modal('hide')
-  $('#item-info').trigger('reset')
+  $('#create-form').trigger('reset')
+  // $('form').trigger('reset')
 }
 
 const onCreateItemFailure = function (data) {
   $('#message-center').text('Failed to create an Item. Please try again.').fadeIn(0, 1)
   $('#message-center').text('Failed to create an Item. Please try again.').fadeOut(5000, 0)
   $('#createItem').modal('hide')
-  $('#item-info').trigger('reset')
+  $('#create-form').trigger('reset')
+  // $('form').trigger('reset')
 }
 
 const onGetMyItemsSuccess = function (data) {
@@ -57,7 +59,7 @@ const onUpdateItemSuccess = function (data) {
   $('#message-center').text('Successfully updated Item').fadeIn(0, 1)
   $('#message-center').text('Successfully updated Item').fadeOut(5000, 0)
   $('#updateItem').modal('hide')
-  $('#updateItemForm').trigger('reset')
+  $('#update-form').trigger('reset')
   // $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
 
@@ -65,13 +67,14 @@ const onUpdateItemFailure = function (data) {
   $('#updateItem').modal('hide')
   $('#message-center').text('You do not have permission to do that.').fadeIn(0, 1)
   $('#message-center').text('You do not have permission to do that.').fadeOut(5000, 0)
-  $('#updateItemForm').trigger('reset')
+  $('#update-form').trigger('reset')
 }
 
 const onDeleteItemSuccess = function () {
   $('.bucket-list').empty()
   $('#message-center').text('Successfully deleted an Item').fadeIn(0, 1)
   $('#message-center').text('Successfully deleted an Item').fadeOut(5000, 0)
+  console.log('deleted item')
 }
 
 const onDeleteItemFailure = function () {

@@ -65,8 +65,8 @@ const deleteItem = function (formData) {
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data: formData
+    }
+    // data: formData
   })
 }
 
