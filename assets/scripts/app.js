@@ -28,10 +28,12 @@ $(() => {
   $('.get-all-items').on('click', itemEvents.onGetAllItems)
   // this will show a specific item for the current user
   $('.show-item').on('click', itemEvents.onShowItem)
+  // // this will mark an item as completed
+  // $('#completedItem').on('click', itemEvents.onCompletedItem)
   // this will update an item (only can be done by owner)
   $('.update-item').on('submit', itemEvents.onUpdateItem)
   // this will delete the item (only can be done by owner)
-  $('#deleteItem').on('submit', itemEvents.onDeleteItem)
+  $('#delete-item-confirm').on('click', itemEvents.onDeleteItem)
 })
 
 module.exports = {
