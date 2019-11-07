@@ -1,0 +1,88 @@
+<div class="items">
+   <h2>My Bucket List</h2>
+   <ul id="items">
+   {{#each items as |item|}}
+     <div data-id="{{item._id}}">
+
+   <!-- Item Display Modal -->
+   <button type="button" class="col-6 btn btn-primary btn-block" data-toggle="modal" data-target="#item-modal" data-item="{{json item}}">
+     {{item.title}}
+   </button>
+
+   <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-labelledby="itemViewLabel" aria-hidden="true" >
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title item-title" id="itemViewLabel"></h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div>
+             Item ID: <span class="item-id"></span>
+           </div>
+           <br><div>
+             Location: <span class="item-location"></span>
+           </div>
+           <br>
+           <div>
+             Description: <span class="item-description"></span>
+           </div>
+           <br>
+           <div>
+             Cost: <span class="item-cost"></span>
+           </div>
+           <br>
+           <div>
+             Importance Rating: <span class="item-importance-scale"></span>
+           </div>
+           <br>
+           <div>
+             Difficulty Rating: <span class="item-difficulty-scale"></span>
+           </div>
+           <br>
+           <div>
+             Completed: <span class="item-completed"></span>
+           </div>
+           <br>
+
+           <!--Complete Item button-->
+           <!-- <button class="btn complete-item-confirm" value="{{item._id}}">Done</button> -->
+
+           <!--Delete Item button-->
+           <button class="btn delete-item-confirm" data-id="{{item._id}}">Delete</button>
+
+           <!--Update Item form-->
+           <h4 class="form-title"> Change the fields you want to update: </h4>
+           <form class="update-form" data-id="{{item._id}}">
+             Title: <span class="required field">*</span> <input type="text" name="item[title]"> <br>
+             Description: <span class="required field">*</span> <textarea name="item[description]" rows="10" cols="50"> </textarea> </br>
+             Location: <input type="text" name="item[location]"> </br>
+             Cost Estimate: <input type="text" name="item[cost]"> </br>
+             Importance Rating: <select name="item[importanceScale]">
+               <option value="1">1 (not very important)</option>
+               <option value="2">2 (somewhat important)</option>
+               <option value="3">3 (important)</option>
+               <option value="4">4 (very important)</option>
+               <option value="5">5 (absolutely crucial)</option>
+             </select>
+             </br>
+             Difficulty Rating:<select name="item[difficultyScale]">
+               <option value="1">1 (easy)</option>
+               <option value="2">2 (somewhat easy)</option>
+               <option value="3">3 (a little difficult)</option>
+               <option value="4">4 (difficult)</option>
+               <option value="5">5 (extremely difficult)</option>
+            </select>
+            </br>
+             <button class="btn update-item-submit" type="submit" >Submit</button>
+           </form>
+         </div>
+       </div>
+     </div>
+   </div> <!--ends view item modal-->
+   {{/each}}
+   </ul>
+ </div>
+</div>
