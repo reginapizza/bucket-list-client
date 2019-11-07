@@ -65,7 +65,7 @@ We could not figure out how to get handlebars to get item_id when it's doing the
 # Wireframes
 
 ![Wireframe](https://user-images.githubusercontent.com/50851526/68174158-12875580-ff4b-11e9-8195-398bdd31d808.png)
-![WWireframe](https://user-images.githubusercontent.com/50851526/68174203-3b0f4f80-ff4b-11e9-9874-a8f600757236.png)
+![Wireframe](https://user-images.githubusercontent.com/50851526/68174203-3b0f4f80-ff4b-11e9-9874-a8f600757236.png)
 
 
 # Future Iterations
