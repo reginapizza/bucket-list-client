@@ -31,7 +31,7 @@ $(() => {
   // // this will mark an item as completed
   // $('#completedItem').on('click', itemEvents.onCompletedItem)
   // this will update an item (only can be done by owner)
-  $('.update-item').on('submit', itemEvents.onUpdateItem)
+  $('.update-item-submit').on('submit', itemEvents.onUpdateItem)
   // this will delete the item (only can be done by owner)
   $('#delete-item-confirm').on('click', itemEvents.onDeleteItem)
 })
