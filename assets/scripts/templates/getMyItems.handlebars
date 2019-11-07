@@ -54,11 +54,11 @@
               </div>
               <h4 class="form-title"> Change the fields you want to update: </h4>
               <form id="update-form">
-                Title: <span class="required field">*</span> <input type="text" name="item[title]" value="{{item.title}}"> <br>
-                Description: <span class="required field">*</span> <textarea name="item[description]" rows="10" cols="50" value="{{item.description}}"> </textarea> </br>
-                Location: <input type="text" name="item[location]" value="{{item.location}}"> </br>
-                Cost Estimate: <input type="text" name="item[cost]" value="{{item.cost}}"> </br>
-                Importance Rating: <select name="item[importanceScale]" value="{{item.importanceRating}}">
+                Title: <span class="required field">*</span> <input type="text" name="item[title]"> <br>
+                Description: <span class="required field">*</span> <textarea name="item[description]" rows="10" cols="50"> </textarea> </br>
+                Location: <input type="text" name="item[location]"> </br>
+                Cost Estimate: <input type="text" name="item[cost]"> </br>
+                Importance Rating: <select name="item[importanceScale]">
                   <option value="1">1 (not very important)</option>
                   <option value="2">2 (somewhat important)</option>
                   <option value="3">3 (important)</option>
@@ -67,11 +67,11 @@
                 </select>
                 </br>
                 Difficulty Rating:<select name="item[difficultyScale]" value="{{item.difficultyRating}}">
-                  <option value="1">1 (not very important)</option>
-                  <option value="2">2 (somewhat important)</option>
-                  <option value="3">3 (important)</option>
-                  <option value="4">4 (very important)</option>
-                  <option value="5">5 (absolutely crucial)</option>
+                  <option value="1">1 (easy)</option>
+                  <option value="2">2 (somewhat easy)</option>
+                  <option value="3">3 (a little difficult)</option>
+                  <option value="4">4 (difficult)</option>
+                  <option value="5">5 (extremely difficult)</option>
                </select>
                </br>
                 <button class="btn" type="submit" id="update-item-submit">Submit</button>
@@ -99,7 +99,7 @@
                </div>
                <div class="modal-body">
                  Are you sure you want to delete this bucket list item? You will not be able to get it back.
-                 <button class="btn" id="delete-item-confirm">Yes, delete it!</button>
+                 <button class="btn delete-item-confirm">Yes, delete it!</button>
                </div>
              </div>
            </div>

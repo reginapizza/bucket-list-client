@@ -15,7 +15,7 @@ const onCreateItem = function (event) {
 // // what the hell is going on here
 // const onCompletedItem = function (event) {
 //   event.preventDefault()
-//   let item.id.completed === true
+//   let completed === true
 //   api.updateItem(completed, id)
 //     .then(ui.onCompletedItemSuccess)
 //     .catch(ui.onCompletedItemFailure)
