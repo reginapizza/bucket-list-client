@@ -2,54 +2,12 @@
    <h2>My Bucket List</h2>
    <ul id="items">
    {{#each items as |item|}}
-     <div>
+     <div data-id="{{item._id}}">
 
        <!-- Item Display Modal -->
-       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#itemView">
+       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#item-modal" data-item="{{json item}}">
          {{item.title}}
        </button>
-       <!-- Modal -->
-       <div class="modal fade" id="itemView" tabindex="-1" role="dialog" aria-labelledby="itemViewLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-               <h5 class="modal-title" id="itemViewLabel">{{item.title}}</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>
-             <div class="modal-body">
-               <div>
-                 Item ID: {{item.id}}
-               </div>
-               <br><div>
-                 Location: {{item.location}}
-               </div>
-               <br>
-               <div>
-                 Description: {{item.description}}
-               </div>
-               <br>
-               <div>
-                 Cost: {{item.cost}}
-               </div>
-               <br>
-               <div>
-                 Importance Rating: {{item.importanceScale}}
-               </div>
-               <br>
-               <div>
-                 Difficulty Rating: {{item.difficultyScale}}
-               </div>
-               <br>
-               <div>
-                 Completed: {{item.completed}}
-               </div>
-               <br>
-             </div>
-           </div>
-         </div>
-       </div> <!--ends view item modal-->
 
        <!--Complete Button-->
        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#completeItem">
@@ -65,15 +23,12 @@
                </button>
              </div>
              <div class="modal-body">
-<<<<<<< HEAD
                Are you sure you want to mark this item off as done?</br>
                <button id="completeItem" class="btn" type="submit">Yes, mark it as done!</button>
-=======
                <form id="completedItemForm">
                  Do you want to mark this item as completed?</br>
                  <button class="btn" type="submit" id="complete-item-submit">Yes, mark it off!</button>
                </form>
->>>>>>> Made changes to forms
              </div>
            </div>
          </div>
@@ -150,5 +105,46 @@
        <br>
      </div>
    {{/each}}
+   <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-labelledby="itemViewLabel" aria-hidden="true" >
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title item-title" id="itemViewLabel"></h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div>
+             Item ID: <span class="item-id"></span>
+           </div>
+           <br><div>
+             Location: <span class="item-location"></span>
+           </div>
+           <br>
+           <div>
+             Description: <span class="item-description"></span>
+           </div>
+           <br>
+           <div>
+             Cost: <span class="item-cost"></span>
+           </div>
+           <br>
+           <div>
+             Importance Rating: <span class="item-importance-scale"></span>
+           </div>
+           <br>
+           <div>
+             Difficulty Rating: <span class="item-difficulty-scale"></span>
+           </div>
+           <br>
+           <div>
+             Completed: <span class="item-completed"></span>
+           </div>
+           <br>
+         </div>
+       </div>
+     </div>
+   </div> <!--ends view item modal-->
    </ul>
 </div>
