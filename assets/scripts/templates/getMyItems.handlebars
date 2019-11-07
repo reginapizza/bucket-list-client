@@ -56,7 +56,7 @@
                 Title: <span class="required field">*</span> <input type="text" name="item[title]" value="{{item.title}}"> <br>
                 Description: <span class="required field">*</span> <textarea name="item[description]" rows="10" cols="50" value="{{item.description}}"> </textarea> </br>
                 Location: <input type="text" name="item[location]" value="{{item.location}}"> </br>
-                Cost Estimate: <input type="text" name="item[cost] value="{{item.cost}}""> </br>
+                Cost Estimate: <input type="text" name="item[cost]" value="{{item.cost}}"> </br>
                 Importance Rating: <select name="item[importanceScale]" value="{{item.importanceRating}}">
                   <option value="1">1 (not very important)</option>
                   <option value="2">2 (somewhat important)</option>
@@ -105,6 +105,7 @@
        <br>
      </div>
    {{/each}}
+
    <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-labelledby="itemViewLabel" aria-hidden="true" >
      <div class="modal-dialog" role="document">
        <div class="modal-content">
