@@ -5,37 +5,38 @@
      <div data-id="{{item._id}}">
 
        <!-- Item Display Modal -->
-       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#item-modal" data-item="{{json item}}">
+       <button type="button" class="col-6 btn btn-primary btn-block" data-toggle="modal" data-target="#item-modal" data-item="{{json item}}">
          {{item.title}}
        </button>
 
-       <!--Complete Button-->
-       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#completeItem">
-         Done
-       </button>
-       <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="completeItemLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-               <h5 class="modal-title" id="completeItemLabel">I did it!</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>
-             <div class="modal-body">
-               Are you sure you want to mark this item off as done?</br>
-               <button id="completeItem" class="btn" type="submit">Yes, mark it as done!</button>
-               <form id="completedItemForm">
-                 Do you want to mark this item as completed?</br>
-                 <button class="btn" type="submit" id="complete-item-submit">Yes, mark it off!</button>
-               </form>
+       <!--completed button (new)-->
+       <div class="completed col-2">
+         <!-- Completed Modal Trigger Button -->
+         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#completedItem">
+           Done
+         </button>
+         <!-- Modal -->
+         <div class="modal fade" id="completedItem" tabindex="-1" role="dialog" aria-labelledby="completedItemLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="completedItemLabel">I did it!</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                 Are you sure you want to mark this item off as done?
+                 <button class="btn" id="complete-item-confirm">Yes, mark it off!</button>
+               </div>
              </div>
            </div>
-         </div>
-       </div>
+         </div> <!--ends completedItem modal-->
+       </div> <!--ends completedItem section-->
+
 
        <!--Update button-->
-       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#updateItem">
+       <button type="button" class="col-2 btn btn-primary btn-block" data-toggle="modal" data-target="#updateItem">
          Update
        </button>
        <!-- Modal -->
@@ -80,30 +81,32 @@
         </div>
        </div>
 
-       <!--deleteItem-->
-       <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#deleteItem">
-         Delete
-       </button>
-       <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="deleteItemLabel" aria-hidden="true">
-         <div class="modal-dialog" role="document">
-           <div class="modal-content">
-             <div class="modal-header">
-               <h5 class="modal-title" id="deleteItemLabel">Delete Bucket List Item</h5>
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                 <span aria-hidden="true">&times;</span>
-               </button>
-             </div>
-             <div class="modal-body">
-               <form id="deleteItemForm">
-                 Are you sure you want to delete this bucket list item?</br>
-                 <button class="btn" type="submit" id="delete-item-submit">Yes, delete it!</button>
-               </form>
+       <!--delete button (new)-->
+       <div class="deleteItem col-2">
+         <!-- Completed Modal Trigger Button -->
+         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#deleteItem">
+           Delete
+         </button>
+         <!-- Modal -->
+         <div class="modal fade" id="deleteItem" tabindex="-1" role="dialog" aria-labelledby="deleteItemLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <h5 class="modal-title" id="deleteItemLabel">I did it!</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                 Are you sure you want to delete this bucket list item? You will not be able to get it back.
+                 <button class="btn" id="delete-item-confirm">Yes, delete it!</button>
+               </div>
              </div>
            </div>
-         </div>
-       </div> <!--ends delete section-->
-       <br>
-     </div>
+         </div> <!--ends deleteItem modal-->
+       </div> <!--ends deleteItem section-->
+
+     </div> <!--ends using data-target=data-id-->
    {{/each}}
 
    <div class="modal fade" id="item-modal" tabindex="-1" role="dialog" aria-labelledby="itemViewLabel" aria-hidden="true" >

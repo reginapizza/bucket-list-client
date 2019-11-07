@@ -20,6 +20,7 @@ const onSignInSuccess = function (responseData) {
 }
 
 const onSignInFailure = function () {
+  $('#signIn').modal('hide')
   $('#message-center').text('Sign in failed. Please Try Again.').fadeIn(0, 1)
   $('#message-center').text('Sign in failed. Please Try Again.').fadeOut(5000, 0)
   $('#signInForm').trigger('reset')
