@@ -18,7 +18,21 @@ const onCreateItemFailure = function (data) {
 }
 
 const onGetMyItemsSuccess = function (data) {
+  console.log(data)
   $('.list-view').css('display', 'block').append(getMyItemsHandlebars({items: data.items}))
+  $('#item-modal').on('show.bs.modal', event => {
+    const button = $(event.relatedTarget)
+    const item = button.data('item')
+    const modal = $('#item-modal')
+    modal.find('.item-id').text(item._id)
+    modal.find('.item-title').text(item.title)
+    modal.find('.item-location').text(item.location)
+    modal.find('.item-description').text(item.description)
+    modal.find('.item-cost').text(item.cost)
+    modal.find('.item-importance-scale').text(item.importanceScale)
+    modal.find('.item-difficulty-scale').text(item.difficultyScale)
+    modal.find('.item-completed').text(item.completed)
+  })
   $('#message-center').text('Successfully got your Items').fadeIn(0, 1)
   $('#message-center').text('Successfully got your Items').fadeOut(5000, 0)
 }
