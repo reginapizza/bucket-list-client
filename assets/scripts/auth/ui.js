@@ -14,7 +14,7 @@ const onSignInSuccess = function (responseData) {
   $('#message-center').text('Signed In Successfully!').fadeOut(5000, 0)
   store.user = responseData.user
   $('#signIn, #signUp').modal('hide')
-  $('.sign-up, .sign-in').hide()
+  $('.sign-up, .sign-in, .landing-page').hide()
   $('.sign-out, .change-password, .get-my-items, .get-all-items, .show-item, .update-item, .delete-item, .create-item').css('display', 'block')
   $('#signInForm, #signUpForm').trigger('reset')
 }
