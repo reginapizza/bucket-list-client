@@ -49,6 +49,7 @@ const showItem = function (formData) {
 }
 
 const updateItem = function (formData) {
+  console.log('update item form data is', formData)
   return $.ajax({
     url: config.apiUrl + '/items/' + formData.item.id,
     method: 'PATCH',
