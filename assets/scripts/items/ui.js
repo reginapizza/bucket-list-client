@@ -70,8 +70,8 @@ const onShowItemFailure = function (data) {
 
 const onUpdateItemSuccess = function (data) {
   $('.bucket-list').empty()
-  $('#message-center').text('Successfully updated Item').fadeIn(0, 1)
-  $('#message-center').text('Successfully updated Item').fadeOut(5000, 0)
+  $('#message-center').text('Your item has been updated, congrats!').fadeIn(0, 1)
+  $('#message-center').text('Your item has been updated, congrats!').fadeOut(5000, 0)
   $('#updateItem').modal('hide')
   $('#update-form').trigger('reset')
   // $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
@@ -79,10 +79,22 @@ const onUpdateItemSuccess = function (data) {
 
 const onUpdateItemFailure = function (data) {
   $('#updateItem').modal('hide')
-  $('#message-center').text('You do not have permission to do that.').fadeIn(0, 1)
-  $('#message-center').text('You do not have permission to do that.').fadeOut(5000, 0)
+  $('#message-center').text('Your item could not be updated, please try again.').fadeIn(0, 1)
+  $('#message-center').text('Your item could not be updated, please try again.').fadeOut(5000, 0)
   $('#update-form').trigger('reset')
 }
+
+// const onCompletedItemSuccess = function (data) {
+//   $('#completedItem').modal('hide')
+//   $('#message-center').text('Your item has been updated, congrats!').fadeIn(0, 1)
+//   $('#message-center').text('Your item has been updated, congrats!').fadeOut(5000, 0)
+// }
+//
+// const onCompletedItemFailure = function (data) {
+//   $('#completedItem').modal('hide')
+//   $('#message-center').text('Your item could not be updated, please try again.').fadeIn(0, 1)
+//   $('#message-center').text('Your item could not be updated, please try again.').fadeOut(5000, 0)
+// }
 
 const onDeleteItemSuccess = function () {
   $('.bucket-list').empty()
@@ -107,6 +119,8 @@ module.exports = {
   onShowItemFailure,
   onUpdateItemSuccess,
   onUpdateItemFailure,
+  // onCompletedItemSuccess,
+  // onCompletedItemFailure,
   onDeleteItemSuccess,
   onDeleteItemFailure
 }

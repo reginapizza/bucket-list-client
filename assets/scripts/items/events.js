@@ -12,6 +12,15 @@ const onCreateItem = function (event) {
     .catch(ui.onCreateItemFailure)
 }
 
+// // what the hell is going on here
+// const onCompletedItem = function (event) {
+//   event.preventDefault()
+//   let item.id.completed === true
+//   api.updateItem(completed, id)
+//     .then(ui.onCompletedItemSuccess)
+//     .catch(ui.onCompletedItemFailure)
+// }
+
 const onUpdateItem = function (event) {
   event.preventDefault()
   const form = event.target
@@ -22,11 +31,11 @@ const onUpdateItem = function (event) {
     .catch(ui.onUpdateItemFailure)
 }
 
-const onShowItems = function (event) {
+const onShowItem = function (event) {
   event.preventDefault()
   api.showItems()
-    .then(ui.onShowItemsSuccess)
-    .catch(ui.onShowItemsFailure)
+    .then(ui.onShowItemSuccess)
+    .catch(ui.onShowItemFailure)
 }
 
 const onGetMyItems = function () {
@@ -49,7 +58,8 @@ const onDeleteItem = function (event) {
 module.exports = {
   onCreateItem,
   onUpdateItem,
-  onShowItems,
+  onShowItem,
+  // onCompletedItem,
   onDeleteItem,
   onGetMyItems
 }
