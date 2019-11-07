@@ -21,19 +21,22 @@ $(() => {
   $('.change-password').on('submit', authEvents.onChangePassword)
   $('.sign-out').on('click', authEvents.onSignOut)
   // this creates an item
-  $('.create-item').on('submit', itemEvents.onCreateItem)
-  // this will get all of the user's item items
-  $('.get-my-items').on('click', itemEvents.onGetMyItems)
-  // this will get ALL items from ALL users
-  $('.get-all-items').on('click', itemEvents.onGetAllItems)
-  // this will show a specific item for the current user
-  $('.show-item').on('click', itemEvents.onShowItem)
+  // $('.create-item').on('submit', itemEvents.onCreateItem)
+  // // this will get all of the user's item items
+  // $('.get-my-items').on('click', itemEvents.onGetMyItems)
+  // // this will get ALL items from ALL users
+  // $('.get-all-items').on('click', itemEvents.onGetAllItems)
+  // // this will show a specific item for the current user
+  // $('.show-item').on('click', itemEvents.onShowItem)
   // // this will mark an item as completed
-  // $('#completedItem').on('click', itemEvents.onCompletedItem)
+  // $('.complete-item-confirm').on('click', itemEvents.onCompletedItem)
+  // $('body').on('click', '.complete-item-confirm', itemEvents.onCompleteItem)
   // this will update an item (only can be done by owner)
-  $('.update-item-submit').on('submit', itemEvents.onUpdateItem)
+  // $('.update-form').on('submit', itemEvents.onUpdateItem)
+  $('body').on('submit', '.update-form', itemEvents.onUpdateItem)
   // this will delete the item (only can be done by owner)
-  $('#delete-item-confirm').on('click', itemEvents.onDeleteItem)
+  // $('.delete-item-confirm').on('click', itemEvents.onDeleteItem)
+  $('body').on('click', '.delete-item-confirm', itemEvents.onDeleteItem)
 })
 
 module.exports = {

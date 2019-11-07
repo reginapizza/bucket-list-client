@@ -23,9 +23,12 @@ const onCreateItem = function (event) {
 
 const onUpdateItem = function (event) {
   event.preventDefault()
+  console.log('made it')
   const form = event.target
+  console.log(form)
   const formData = getFormFields(form)
-  const id = formData.item.id
+  const id = $(event.target).data('id')
+  console.log('id ', id)
   api.updateItem(formData, id)
     .then(ui.onUpdateItemSuccess)
     .catch(ui.onUpdateItemFailure)
@@ -49,8 +52,8 @@ const onGetMyItems = function () {
 
 const onDeleteItem = function (event) {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-  api.deleteItem(formData)
+  const id = $(event.target).data('id')
+  api.deleteItem(id)
     .then(ui.onDeleteItemSuccess)
     .catch(ui.onDeleteItemFailure)
 }

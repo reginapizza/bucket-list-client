@@ -48,10 +48,10 @@ const showItem = function (formData) {
   })
 }
 
-const updateItem = function (formData) {
+const updateItem = function (formData, id) {
   console.log('update item form data is', formData)
   return $.ajax({
-    url: config.apiUrl + '/items/' + formData.item.id,
+    url: config.apiUrl + '/items/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -60,9 +60,10 @@ const updateItem = function (formData) {
   })
 }
 
-const deleteItem = function (formData) {
+const deleteItem = function (id) {
+  console.log('the id is', id)
   return $.ajax({
-    url: config.apiUrl + '/items/' + formData.item.id,
+    url: config.apiUrl + '/items/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
