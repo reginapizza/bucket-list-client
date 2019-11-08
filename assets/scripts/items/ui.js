@@ -19,7 +19,7 @@ const onCreateItemFailure = function (data) {
 
 const onGetMyItemsSuccess = function (data) {
   console.log(data)
-  $('.list-view').css('display', 'block').append(getMyItemsHandlebars({items: data.items}))
+  $('.list-view').empty().css('display', 'block').append(getMyItemsHandlebars({items: data.items}))
   $('#item-modal').on('show.bs.modal', event => {
     const button = $(event.relatedTarget)
     const item = button.data('item')
@@ -72,7 +72,7 @@ const onUpdateItemSuccess = function (data) {
   $('.bucket-list').empty()
   $('#message-center').text('Your item has been updated, congrats!').fadeIn(0, 1)
   $('#message-center').text('Your item has been updated, congrats!').fadeOut(5000, 0)
-  $('#updateItem').modal('hide')
+  $('#item-modal').modal('hide')
   $('#update-form').trigger('reset')
   // $('.bucket-list').css('display', 'block').append(showItemHandlebars({item: data.item}))
 }
@@ -97,13 +97,15 @@ const onUpdateItemFailure = function (data) {
 // }
 
 const onDeleteItemSuccess = function () {
-  $('.bucket-list').empty()
+  $('#item-modal').modal('hide')
+  $('.list-view').empty()
   $('#message-center').text('Successfully deleted an Item').fadeIn(0, 1)
   $('#message-center').text('Successfully deleted an Item').fadeOut(5000, 0)
   console.log('deleted item')
 }
 
 const onDeleteItemFailure = function () {
+  $('#item-modal').modal('hide')
   $('#message-center').text('You do not have permission to do that.').fadeIn(0, 1)
   $('#message-center').text('You do not have permission to do that.').fadeOut(5000, 0)
 }
