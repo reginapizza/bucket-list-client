@@ -21,11 +21,11 @@ $(() => {
   $('.change-password').on('submit', authEvents.onChangePassword)
   $('.sign-out').on('click', authEvents.onSignOut)
   // this creates an item
-  // $('.create-item').on('submit', itemEvents.onCreateItem)
+  $('#create-form').on('submit', itemEvents.onCreateItem)
   // // this will get all of the user's item items
   // $('.get-my-items').on('click', itemEvents.onGetMyItems)
   // // this will get ALL items from ALL users
-  // $('.get-all-items').on('click', itemEvents.onGetAllItems)
+  $('.get-all-items').on('click', itemEvents.onGetAllItems)
   // // this will show a specific item for the current user
   // $('.show-item').on('click', itemEvents.onShowItem)
   // // this will mark an item as completed
