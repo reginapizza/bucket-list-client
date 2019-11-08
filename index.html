@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bucket List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body data-spy="scroll">
+  <div class="container">
+    <!--new row (title)-->
+    <div class="row title">
+      <h1 class="col-12">Bucket List</h1>
+    </div>
+
+    <!--new row (nav bar)-->
+    <div class="row">
+
+      <!--SIGN UP-->
+      <div class="sign-up col-4">
+        <!-- Sign up Modal Button -->
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signUp">
+          Sign Up
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="signUpForm">
+                  <input type="email" name="credentials[email]" placeholder="Enter Email">
+                  <input type="password" name="credentials[password]"
+                  placeholder="Enter Password">
+                  <input type="password" name="credentials[password_confirmation]"
+                  placeholder="Enter Password Again"></br>
+                  <button class="btn">Sign Up!</button>
+                </form>
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+              </div>
+            </div>
+          </div>
+        </div> <!--ends sign up modal-->
+      </div> <!--ends sign up-->
+
+      <!--SIGN IN-->
+      <div class="sign-in col-4">
+        <!-- Sign In Modal Button -->
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signIn">
+          Sign In Now
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signInLabel">Sign In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="signInForm">
+                  <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
+                  <input class="sign-in-start" type="password" name="credentials[password]" placeholder="Enter Password">
+                  <button class="btn">Sign In!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div> <!--ends sign in modal-->
+      </div> <!--ends sign in-->
+
+      <!--Getting all Items for ALL Users - EXTRA FEATURE, ADD WHEN READY-->
+      <!-- <div class="col-4" id="getAllItems"> NOTE: THIS NEEDS TO HAVE AN EVENT TO CHANGE TO COL-2 IN ONSIGNINSUCCESS/ OPPOSITE SIGNTOUTSUCCESS
+        <button btn btn-block">See All Items</button>
+      </div> -->
+
+      <!--this is where all user messages will be displayed-->
+      <div id="message-center" class="col-4">
+      </div>
+
+      <!--CHANGE PASSWORD-->
+      <div class="change-password col-2">
+        <!-- Sign in Modal Button -->
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#changePassword">
+          Change Password
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="changePasswordLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="changePasswordLabel">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="changePasswordForm">
+                  <input type="password" name="passwords[old]" placeholder="Enter Old Password">
+                  <input type="password" name="passwords[new]" placeholder="Enter New Password">
+                  <button class="btn" type="submit">Change Password!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div> <!--ends change password modal-->
+      </div> <!--ends change password-->
+
+      <!--sign out-->
+      <div>
+        <form class="sign-out col-2">
+          <button class="btn btn-block">Sign Out!</button>
+        </form>
+      </div>
+
+    </div> <!--ends row (nav)-->
+
+    <div> <!--new row (content)-->
+      <!--Create an Item-->
+      <div class="create-item">
+        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#createItem">
+          Click here to create an item!
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="createItem" tabindex="-1" role="dialog" aria-labelledby="createItemTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="createItemTitle">My Item</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span> </button>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <h6><span>* = Required Field</span></h6>
+                </div>
+                <h4 class="form-title"> My New Bucket List Item: </h4>
+                <form id="create-form">
+                  Title: <span class="required field">*</span> <input type="text" name="item[title]"> <br>
+                  Description: <span class="required field">*</span> <textarea name="item[description]" rows="10" cols="50" placeholder=""> </textarea> </br>
+                  Location: <input type="text" name="item[location]" placeholder="Ex: Boston"> </br>
+                  Cost Estimate: <input type="text" name="item[cost]"> </br>
+                  Importance Rating: <select name="item[importanceScale]">
+                    <option value="1">1 (not very important)</option>
+                    <option value="2">2 (somewhat important)</option>
+                    <option value="3">3 (important)</option>
+                    <option value="4">4 (very important)</option>
+                    <option value="5">5 (absolutely crucial)</option>
+                  </select>
+                  </br>
+                  Difficulty Rating:<select name="item[difficultyScale]">
+                    <option value="1">1 (easy)</option>
+                    <option value="2">2 (somewhat easy)</option>
+                    <option value="3">3 (a little difficult)</option>
+                    <option value="4">4 (difficult)</option>
+                    <option value="5">5 (extremely difficult)</option>
+                 </select>
+                 </br>
+                  <button class="btn" type="submit" id="create-item-submit">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!--ends create item-->
+
+      <!--this is the content that users see before they are signed in/when they sign out-->
+      <div class="landing-page">
+        <h3>I want to: </h3>
+        <div class="randomBucketListItem">
+        </div>
+        <h3> What do <i>you</i> want to do? </h3>
+        <h5>Sign in now to start adding items to your bucket list! </h5> <!--NOTE: Sign in should link to the sign in above (do after MVP)-->
+        <h6>Why should I make a bucket list? </h6> <!--NOTE: this should be a popup modal with reasons why you should make a bucket list.-->
+      </div>
+      <div class="list-view">
+      </div>
+
+    </div> <!--ends row(content)-->
+  </div> <!--ends bootstrap container-->
+</body>
+</html>
