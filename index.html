@@ -41,14 +41,21 @@
               </div>
               <div class="modal-body">
                 <form id="signUpForm">
-                  <input type="email" name="credentials[email]" placeholder="Enter Email">
-                  <input type="password" name="credentials[password]"
-                  placeholder="Enter Password">
-                  <input type="password" name="credentials[password_confirmation]"
-                  placeholder="Enter Password Again"></br>
-                  <button class="btn">Sign Up!</button>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="credentials[email]" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">You do not need to use your real email.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPasswordconfirm">Password Confirmation</label>
+                    <input type="password" name="credentials[password_confirmation]" class="form-control" placeholder="Password Confirmation">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign Up!</button>
                 </form>
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
               </div>
             </div>
           </div>
@@ -59,7 +66,7 @@
       <div class="sign-in col-4">
         <!-- Sign In Modal Button -->
         <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#signIn">
-          Sign In Now
+          Sign In
         </button>
         <!-- Modal -->
         <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
@@ -73,9 +80,15 @@
               </div>
               <div class="modal-body">
                 <form id="signInForm">
-                  <input class="sign-in-start" type="email" name="credentials[email]" placeholder="Enter Email">
-                  <input class="sign-in-start" type="password" name="credentials[password]" placeholder="Enter Password">
-                  <button class="btn">Sign In!</button>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" name="credentials[email]" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="credentials[password]" class="form-control" placeholder="Password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Sign In!</button>
                 </form>
               </div>
             </div>
@@ -109,10 +122,21 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form id="changePasswordForm">
+                <!-- <form id="changePasswordForm">
                   <input type="password" name="passwords[old]" placeholder="Enter Old Password">
                   <input type="password" name="passwords[new]" placeholder="Enter New Password">
                   <button class="btn" type="submit">Change Password!</button>
+                </form> -->
+                <form id="changePasswordForm">
+                  <div class="form-group">
+                    <label for="password">Old Password</label>
+                    <input type="password" name="passwords[old]" class="form-control" aria-describedby="old password" placeholder="Enter old password">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">New Password</label>
+                    <input type="password" name="passwords[new]" class="form-control" placeholder="Enter new password">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>
             </div>
@@ -122,9 +146,10 @@
 
       <!--sign out-->
       <div>
-        <form class="sign-out col-2">
+        <!-- <form class="sign-out col-2">
           <button class="btn btn-block">Sign Out!</button>
-        </form>
+        </form> -->
+        <button class="sign-out btn">Sign Out</button>
       </div>
 
     </div> <!--ends row (nav)-->
